@@ -114,8 +114,7 @@ class TestPicnicSensor(unittest.IsolatedAsyncioTestCase):
         self.config_entry.add_to_hass(self.hass)
 
     async def asyncTearDown(self):
-        """Tear down the test setup, stop hass/patchers and remove all config entries."""
-        await self.hass.config_entries.async_remove(self.config_entry.entry_id)
+        """Tear down the test setup, stop hass/patchers."""
         await self.hass.async_stop(force=True)
         self.picnic_patcher.stop()
 
